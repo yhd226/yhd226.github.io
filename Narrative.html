@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Sequential Full-Screen Tableau Visualizations</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Kanit"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik"
+      rel="stylesheet"
+    />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Sedan" 
+      rel="stylesheet"
+    />
+    <!-- Google Fonts link -->
+    <style>
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 600vh; /* 100% height for each of 6 visualizations */
+        background-color: #f0eae8;
+      }
+      .tableauPlaceholder {
+        width: 70vw; /* 100% of the viewport width */
+        height: 100vh; /* 100% of the viewport height */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      object.tableauViz {
+        width: 100%;
+        height: 100%;
+      }
+      h1 {
+        font-weight: bold;
+        text-align: center;
+        margin-top: 20px; /* Space above the title */
+        /*color: #006666; /* Dark grey color for the title */
+        font-size: 2.2em; /* Larger font size for main title */
+        font-family: "Poppins", sans-serif;
+        color: #002952;
+      }
+      h2 {
+        
+        text-align: left;
+        font-size: 1.9em; /* Smaller than h1 but significant */
+        margin: 20px 0; /* Add some space around the title for clarity */
+        color: #003366; /* Dark grey color for the title */
+        font-family: "Rubik", serif;
+      }
+      h3 {
+        text-align: left;
+        color: #00478F; /* Lighter grey for the subtitle */
+        font-size: 1.4em; /* Smaller than h1 but significant */
+        margin-top: 0; /* Reduce spacing to pair closely with the main title */
+        margin-bottom: 20px; /* Space before the visualizations start */
+        font-family: "Rubik", serif;
+      }
+      h4 {
+        text-align: center;
+        color: #6a6a6a; /* Lighter grey for the subtitle */
+        font-size: 1.4em; /* Smaller than h1 but significant */
+        margin-top: 0; /* Reduce spacing to pair closely with the main title */
+        margin-bottom: 20px; /* Space before the visualizations start */
+        font-family: "Kanit", serif;
+      }
+      p {
+        text-align: left;
+        font-size: 1.2em;
+        margin: 0 auto 20px 1em; /* Maintains margin but aligns text left */
+        /* width: 70%; Adjust as needed for readability */
+        line-height: 1.6; /* Enhances readability */
+        font-family: "Rubik", serif;
+        /* text-indent: 2em; */
+       
+      }
+      strong {
+        text-align: left;
+        /* font-weight: bold; */
+        font-size: 1.2em;
+        margin: 0 auto 20px auto; /* Maintains margin but aligns text left */
+        width: 70%; /*Adjust as needed for readability */ 
+        line-height: 1; /* Enhances readability */
+        font-family: "Rubik", serif;
+      }
+
+      /* Style for list items */
+      li {
+        text-align: left;
+        list-style-type: disc; /* Example bullet style */
+        /*margin-bottom: 5px; /* Example margin */
+        font-size: 1.2em;
+        margin: 0 auto 10px auto; /* Maintains margin but aligns text left */
+        /* width: 70%; Adjust as needed for readability */
+        line-height: 1; /* Enhances readability */
+        font-family: "Rubik", serif;
+      }
+
+      /* border */
+      hr{
+        border: 2px solid #003366; 
+        opacity: 0.5;
+      }
+      .weight{
+        font-weight: 900;
+      }
+      a{
+        color:#002952;
+      }
+    </style>
+  </head>
+  <body>
+    <main style="margin-left: 12%; margin-right: 12%">
+      <h1>Unveiling the Urgency: <br> The Immediate Threat of Climate Change</h1>
+      <h4>Narrative Visualization by Haoduo Yan and Chang Wang</h4>
+      <section id="overview">
+        <hr />
+        <h2>Overview</h2>
+      
+        <p>
+            As we celebrate Earth Day, we are reminded to confront the most
+          pressing issue of our time: climate change. This year's observance
+          starkly highlights the accelerating impacts of a warming planet and
+          underscores the urgent need for collective action to protect our
+          shared future.
+        </p>
+        <p>
+            Carbon dioxide levels in our atmosphere, the primary contributor to
+          global warming, have reached unprecedented heights in human history,
+          highlighting the significant impact of human activities on our
+          planet's balance. Sea levels are rising faster than ever, posing
+          serious risks to coastal communities and marine environments around
+          the world. The Arctic, a crucial component of Earth's ecological
+          system, is losing sea ice at an alarming rate. At the same time,
+          global temperatures are increasing at an unparalleled pace, with
+          recent years setting new records for heat and intensifying extreme
+          weather events. These trends urgently demand action. The window to
+          mitigate the worst impacts of climate change is rapidly closing.
+        </p>
+        <p>
+            As you look at these climate visualizations, let them inspire you. The
+          future of our planet is in our hands, and the choices we make now will
+          shape generations to come. This Earth Day, let's strengthen our shared
+          commitment to confronting climate change together, for our Earth and
+          all its inhabitants.
+        </p>
+      </section>
+
+      <!-- CO2 Visualization -->
+      <h2>CO<sub>2</sub> Emissions and Their Impact</h2>
+      <p>
+          The concentration of carbon dioxide (CO<sub>2</sub>) in the Earth's atmosphere has
+        been on a significant upward trajectory since the Industrial Revolution,
+        due to human activities such as the burning of fossil fuels,
+        deforestation, and various industrial processes. The visualization shows
+        the increasing levels of CO<sub>2</sub> released into the atmosphere from 1958 to
+        2017.
+      </p>
+
+      <div
+        class="tableauPlaceholder"
+        id="viz1714187322596"
+        style="position: relative"
+      >
+        <noscript
+          ><a href="#"
+            ><img
+              alt="CO2 "
+              src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CO&#47;CO2_17141007375400&#47;CO2&#47;1_rss.png"
+              style="border: none" /></a></noscript
+        ><object class="tableauViz" style="display: none">
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+          <param name="embed_code_version" value="3" />
+          <param name="site_root" value="" />
+          <param name="name" value="CO2_17141007375400&#47;CO2" />
+          <param name="tabs" value="no" />
+          <param name="toolbar" value="yes" />
+          <param
+            name="static_image"
+            value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;CO&#47;CO2_17141007375400&#47;CO2&#47;1.png"
+          />
+          <param name="animate_transition" value="yes" />
+          <param name="display_static_image" value="yes" />
+          <param name="display_spinner" value="yes" />
+          <param name="display_overlay" value="yes" />
+          <param name="display_count" value="yes" />
+          <param name="language" value="en" />
+        </object>
+      </div>
+      <script type="text/javascript">
+        var divElement = document.getElementById("viz1714187322596");
+        var vizElement = divElement.getElementsByTagName("object")[0];
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.width = "100%";
+          vizElement.style.height = "100vh";
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.width = "100%";
+          vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+        } else {
+          vizElement.style.width = "100%";
+          vizElement.style.height = "727px";
+        }
+        var scriptElement = document.createElement("script");
+        scriptElement.src =
+          "https://public.tableau.com/javascripts/api/viz_v1.js";
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+      <p>
+        The yearly up-and-down pattern in CO<sub>2</sub> levels is a seasonal cycle caused
+        by photosynthesis on a large scale. CO<sub>2</sub> decreases during the plant
+        growing season as plants use sunlight to make food from CO<sub>2</sub> and water.
+        Then in fall, plants stop growing and release CO<sub>2</sub>. This annual rise and
+        fall can be viewed as the Earth "breathing" in and out.
+      </p>
+
+      <h3>Looking Back:</h3>
+      <ul>
+        <li>
+          <span class="weight">Before Industrial Era:</span> 
+          Atmospheric CO<sub>2</sub> was around 280 parts per million (ppm).
+        </li>
+        <li>
+          <span  class="weight">Industrial Revolution:</span> From the late 1700s,
+          CO<sub>2</sub> levels began to climb.
+        </li>
+        <li>
+          <span class="weight">1958:</span> Charles Keeling starts the continuous CO<sub>2</sub>
+          readings at Mauna Loa, with levels under 315 ppm.
+        </li>
+        <li>
+          <span class="weight">2013:</span> We crossed the 400 ppm threshold, a first in
+          the recorded history.
+        </li>
+        <li>
+          <span class="weight">The 2020s:</span> Over the last ten years, CO<sub>2</sub> has been
+          going up by roughly 2.5 ppm each year. The upward trend continues,
+          breaking new records in some months.
+        </li>
+      </ul>
+      <h3>Looking Ahead:</h3>
+      <p>
+        Unless serious actions are taken to reduce emissions, CO<sub>2</sub> levels are
+        expected to keep rising, bringing more intense climate change impacts
+        like severe weather, rising seas, and disrupted ecosystems.
+        The link between human actions and rising CO<sub>2</sub> — and thus climate change
+        — is clear, emphasizing the urgent need for policies that cut CO<sub>2</sub>
+        emissions on a global scale.
+      </p>
+
+      <!-- Ice Mass Visualization -->
+      <h2>Shrinking Ice Mass</h2>
+      <p>
+        The decline in ice mass across Earth's polar regions and glaciers serves
+        as a stark indicator of climate change. In recent decades, data
+        consistently reveals significant reductions in ice masses, notably in
+        Antarctica, Greenland, and Arctic sea ice.
+     
+        According to data from the National Snow and Ice Data Center, as of
+        2021, these ice sheets collectively contribute approximately 400 billion
+        tons of water annually through icebergs or meltwater runoff. Our
+        visualization highlights the alarming trend of ice loss in Antarctica
+        from 2002 to 2023, revealing a staggering rate of decline.
+      </p>
+
+      <div
+        class="tableauPlaceholder"
+        id="viz1714187343979"
+        style="position: relative"
+      >
+        <noscript
+          ><a href="#"
+            ><img
+              alt="ICE "
+              src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ic&#47;IceMass&#47;ICE&#47;1_rss.png"
+              style="border: none" /></a></noscript
+        ><object class="tableauViz" style="display: none">
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+          <param name="embed_code_version" value="3" />
+          <param name="site_root" value="" />
+          <param name="name" value="IceMass&#47;ICE" />
+          <param name="tabs" value="no" />
+          <param name="toolbar" value="yes" />
+          <param
+            name="static_image"
+            value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ic&#47;IceMass&#47;ICE&#47;1.png"
+          />
+          <param name="animate_transition" value="yes" />
+          <param name="display_static_image" value="yes" />
+          <param name="display_spinner" value="yes" />
+          <param name="display_overlay" value="yes" />
+          <param name="display_count" value="yes" />
+          <param name="language" value="en" />
+        </object>
+      </div>
+      <script type="text/javascript">
+        var divElement = document.getElementById("viz1714187343979");
+        var vizElement = divElement.getElementsByTagName("object")[0];
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.width = "100%";
+          vizElement.style.height = "110vh";
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.width = "100%";
+          vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+        } else {
+          vizElement.style.width = "100%";
+          vizElement.style.height = "727px";
+        }
+        var scriptElement = document.createElement("script");
+        scriptElement.src =
+          "https://public.tableau.com/javascripts/api/viz_v1.js";
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+      <p>
+        Satellite imagery reveals a substantial decrease in the extent of Arctic
+        sea ice, particularly during the summer months. The summer minimum ice
+        extent, which occurs annually in September, has reached record lows in
+        recent years.
+      </p>
+
+      <p>
+        Initially triggered by the climate crisis, the rapid decline of Arctic
+        sea ice now also contributes significantly to that crisis, with severe
+        global consequences. But for the region’s delicate ecosystems and its
+        diverse wildlife, the impacts are closer to home.The melting sea ice
+        alters the availability of essential habitats and disrupts food webs,
+        endangering a wide variety of species.
+      </p>
+
+      <p>
+        This melting of the ice sheets can trigger a chain reaction of impacts
+        driven by global warming. It doesn't just contribute to sea level rise
+        directly. It can also instigate broader changes in ocean circulation and
+        climate systems as the an influx of freshwater enters marine
+        environments.
+      </p>
+      <p>
+        Despite the grave threats, it's important to remember that it's not too
+        late to save Arctic sea ice. Scientific studies indicate there is no
+        tipping point beyond which the ice cannot recover. The Arctic ice can
+        rebound if we take collective action now to transition away from fossil
+        fuels and replace them with renewable energy sources like solar and wind
+        power.
+      </p>
+      <!-- Sea Level Visualization -->
+      <h2>Rising Sea Levels</h2>
+      <p>
+        The rise in global sea levels is a critical consequence of climate
+        change. As the Earth's atmosphere and oceans absorb more heat, global
+        warming is causing global mean sea level to rise in two ways. First,
+        glaciers and ice sheets worldwide are melting and adding water to the
+        ocean. Second, the volume of the ocean is expanding as the water warms.
+      </p>
+      <p>
+        The visualization below shows the rise in sea levels from 1880 to 2015.
+      </p>
+      <div
+        class="tableauPlaceholder"
+        id="viz1714187333557"
+        style="position: relative"
+      >
+        <noscript
+          ><a href="#"
+            ><img
+              alt="SeaLevel "
+              src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Se&#47;SeaLevel_17141019655790&#47;SeaLevel&#47;1_rss.png"
+              style="border: none" /></a></noscript
+        ><object class="tableauViz" style="display: none">
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+          <param name="embed_code_version" value="3" />
+          <param name="site_root" value="" />
+          <param name="name" value="SeaLevel_17141019655790&#47;SeaLevel" />
+          <param name="tabs" value="no" />
+          <param name="toolbar" value="yes" />
+          <param
+            name="static_image"
+            value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Se&#47;SeaLevel_17141019655790&#47;SeaLevel&#47;1.png"
+          />
+          <param name="animate_transition" value="yes" />
+          <param name="display_static_image" value="yes" />
+          <param name="display_spinner" value="yes" />
+          <param name="display_overlay" value="yes" />
+          <param name="display_count" value="yes" />
+          <param name="language" value="en" />
+        </object>
+      </div>
+      <script type="text/javascript">
+        var divElement = document.getElementById("viz1714187333557");
+        var vizElement = divElement.getElementsByTagName("object")[0];
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.width = "100%";
+          vizElement.style.height = "100vh";
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.width = "100%";
+          vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+        } else {
+          vizElement.style.width = "100%";
+          vizElement.style.height = "727px";
+        }
+        var scriptElement = document.createElement("script");
+        scriptElement.src =
+          "https://public.tableau.com/javascripts/api/viz_v1.js";
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+      <p>
+        Since 1880, global mean sea level has increased by approximately 8 to 9
+        inches (21 to 25 centimeters). Between 2006 and 2015, the global mean
+        water level in the ocean surged by 0.14 inches (3.6 millimeters)
+        annually, significantly surpassing the twentieth-century average rate of
+        0.06 inches (1.4 millimeters) per year.
+      </p>
+      <p>
+        Projections suggest that by the end of the century, global mean sea
+        level could rise by at least one foot (0.3 meters) above 2000 levels,
+        even under relatively low greenhouse gas emission scenarios. In certain
+        ocean basins, sea levels have escalated by as much as 6 to 8 inches (15
+        to 20 centimeters) since the beginning of the satellite record. Regional
+        disparities arise due to natural variability in the intensity of winds
+        and ocean currents, which dictate the distribution and depth of oceanic
+        heat storage.
+      </p>
+      <h3>Sea Level Matters:</h3>
+      <p>
+        In the United States, almost 30 percent of the population lives in
+        relatively high population-density coastal areas, where sea level plays
+        a role in flooding, shoreline erosion, and hazards from storms.
+        Globally, 8 of the world’s 10 largest cities are near a coast, according
+        to the U.N. Atlas of the Oceans.
+      </p>
+      <p>
+        Rising seas amplify coastal flood risks, cause shoreline erosion,
+        increased saltwater intrusion into aquifers, and loss of wetlands and
+        other coastal ecosystems. Many low-lying islands and coastal
+        cities/megacities face existential threats without mitigative actions.
+      </p>
+
+      <!-- Temperature Index Visualization -->
+      <h2>Rising Global Temperatures</h2>
+      <p>
+        The rise of Earth's temperature, often referred to as global warming, is
+        a phenomenon characterized by a gradual increase in the average surface
+        temperature of the planet. Over the past century, the Earth's temperature has been rising at an
+        accelerated rate, with the 10 warmest years on record occurring since
+        2005. The warming trend can be clearly seen in temperature data.
+      </p>
+      <div
+        class="tableauPlaceholder"
+        id="viz1714187355459"
+        style="position: relative"
+      >
+        <noscript
+          ><a href="#"
+            ><img
+              alt="Temperature "
+              src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Te&#47;Temperature_17141006729440&#47;Temperature&#47;1_rss.png"
+              style="border: none" /></a></noscript
+        ><object class="tableauViz" style="display: none">
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+          <param name="embed_code_version" value="3" />
+          <param name="site_root" value="" />
+          <param
+            name="name"
+            value="Temperature_17141006729440&#47;Temperature"
+          />
+          <param name="tabs" value="no" />
+          <param name="toolbar" value="yes" />
+          <param
+            name="static_image"
+            value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Te&#47;Temperature_17141006729440&#47;Temperature&#47;1.png"
+          />
+          <param name="animate_transition" value="yes" />
+          <param name="display_static_image" value="yes" />
+          <param name="display_spinner" value="yes" />
+          <param name="display_overlay" value="yes" />
+          <param name="display_count" value="yes" />
+          <param name="language" value="en" />
+        </object>
+      </div>
+      <script type="text/javascript">
+        var divElement = document.getElementById("viz1714187355459");
+        var vizElement = divElement.getElementsByTagName("object")[0];
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.width = "100%";
+          vizElement.style.height = "110vh";
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.width = "100%";
+          vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+        } else {
+          vizElement.style.width = "100%";
+          vizElement.style.height = "777px";
+        }
+        var scriptElement = document.createElement("script");
+        scriptElement.src =
+          "https://public.tableau.com/javascripts/api/viz_v1.js";
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+      <p>
+        From 1880 to the present day, Earth's average surface temperature has
+        undergone a significant increase, marking a period of substantial global
+        warming. This rise in temperature is primarily attributed to human
+        activities, particularly the burning of fossil fuels, deforestation, and
+        industrial processes, which have led to the release of greenhouse gases
+        into the atmosphere. Throughout this period, scientific observations and
+        data from various sources, including temperature records, satellite
+        observations, and ice core samples, have consistently shown an upward
+        trend in global temperatures. The rate of temperature increase has
+        accelerated in recent decades, with each successive decade since the
+        mid-20th century being warmer than the previous one.
+      </p>
+
+      <!-- World Temperature Visualization -->
+     
+      <h3>A Visual Record of Temperature Change Across Nations:</h3>
+      <p>
+        As we explore the data, we gain a deeper understanding of how
+        temperature patterns vary across countries and continents. By advancing
+        through the time periods, we can identify regions that have experienced
+        substantial warming over the past 100+ years.
+      </p>
+      <div
+        class="tableauPlaceholder"
+        id="viz1714187369957"
+        style="position: relative"
+      >
+        <noscript
+          ><a href="#"
+            ><img
+              alt="WorldTemp "
+              src="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Gl&#47;GlobalTemperatureRise_17141019273880&#47;WorldTemp&#47;1_rss.png"
+              style="border: none" /></a></noscript
+        ><object class="tableauViz" style="display: none">
+          <param name="host_url" value="https%3A%2F%2Fpublic.tableau.com%2F" />
+          <param name="embed_code_version" value="3" />
+          <param name="site_root" value="" />
+          <param
+            name="name"
+            value="GlobalTemperatureRise_17141019273880&#47;WorldTemp"
+          />
+          <param name="tabs" value="no" />
+          <param name="toolbar" value="yes" />
+          <param
+            name="static_image"
+            value="https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Gl&#47;GlobalTemperatureRise_17141019273880&#47;WorldTemp&#47;1.png"
+          />
+          <param name="animate_transition" value="yes" />
+          <param name="display_static_image" value="yes" />
+          <param name="display_spinner" value="yes" />
+          <param name="display_overlay" value="yes" />
+          <param name="display_count" value="yes" />
+          <param name="language" value="en" />
+        </object>
+      </div>
+      <script type="text/javascript">
+        var divElement = document.getElementById("viz1714187369957");
+        var vizElement = divElement.getElementsByTagName("object")[0];
+        if (divElement.offsetWidth > 800) {
+          vizElement.style.width = "100%";
+          vizElement.style.height = "240vh";
+        } else if (divElement.offsetWidth > 500) {
+          vizElement.style.width = "100%";
+          vizElement.style.height = divElement.offsetWidth * 0.75 + "px";
+        } else {
+          vizElement.style.width = "100%";
+          vizElement.style.height = "1377px";
+        }
+        var scriptElement = document.createElement("script");
+        scriptElement.src =
+          "https://public.tableau.com/javascripts/api/viz_v1.js";
+        vizElement.parentNode.insertBefore(scriptElement, vizElement);
+      </script>
+      <p>
+        At the country level, the data unveils how nations worldwide have
+        experienced varying degrees of temperature increase over time,
+        reflecting the localized impacts of global climate change. From the
+        tropical climates of equatorial regions to the temperate zones of the
+        mid-latitudes, each country's temperature rise paints a unique portrait
+        of climate dynamics shaped by geographical and environmental factors.
+      </p>
+      <p>
+        Zooming in further, the visualization delves into temperature trends
+        within specific cities, capturing the urban heat island effect and other
+        localized influences on climate patterns. This micro-level analysis
+        provides valuable insights into how urbanization, land use changes, and
+        infrastructure development contribute to temperature fluctuations within
+        urban environments.
+      </p>
+      <!-- Conclusion -->
+      <h2>Conclusion</h2>
+      <p>
+        The data presented in this report offers a comprehensive and compelling
+        narrative of the challenges posed by global warming and climate change.
+        From the relentless rise in greenhouse gas emissions to the shrinking of
+        polar ice caps, the evidence is clear: our planet is facing an
+        unprecedented environmental crisis.
+      </p>
+      <p>
+        At the root of these changes is the continued release of greenhouse gas
+        emissions, primarily carbon dioxide from burning fossil fuels. These
+        heat-trapping gases have raised global temperatures by over 1°C since
+        the pre-industrial era, with warming rates accelerating over recent
+        decades as emissions remain high.
+      </p>
+      <p>
+        The consequences are already severe, ranging from rapidly melting Arctic
+        sea ice to increasingly devastating hurricanes, floods, droughts,
+        wildfires, and heatwaves that impact communities worldwide. Global mean
+        sea level rise of over 2 feet by 2100 is likely even with emissions
+        cuts, which would submerge many low-lying island nations and displace
+        tens of millions of coastal residents worldwide.
+      </p>
+      <p>
+        The urgency of the climate crisis demands bold and decisive action. From
+        transitioning to renewable energy sources and adopting green
+        technologies to implementing policies that prioritize environmental
+        conservation and resilience, there are myriad opportunities to mitigate
+        the impacts of climate change and build a more equitable and resilient
+        world for future generations. There is no Planet B. We must stand
+        united.
+      </p>
+      <h2>Reference</h2>
+      <ul>
+        <li>“What Is Climate Change? - NASA Science.”
+           Accessed April 28, 2024. <br><a href="https://science.nasa.gov/climate-change/what-is-climate-change/">https://science.nasa.gov/climate-change/what-is-climate-change/</a>.
+        </li>
+        <li>
+          “NASA-Led Study Reveals the Causes of Sea Level Rise Since 1900.” 
+          NASA Jet Propulsion Laboratory (JPL). Accessed April 28, 2024. 
+         <br><a href="https://www.jpl.nasa.gov/news/nasa-led-study-reveals-the-causes-of-sea-level-rise-since-1900">https://www.jpl.nasa.gov/news/nasa-led-study-reveals-the-causes-of-sea-level-rise-since-1900</a>.
+        </li>
+      </ul>
+    </main>
+    <script type="text/javascript">
+      var divElement = document.getElementById("viz1714107451189");
+      var vizElement = divElement.getElementsByTagName("object")[0];
+      if (divElement.offsetWidth > 800) {
+        vizElement.style.width = "1600px";
+        vizElement.style.height = "2027px";
+      } else if (divElement.offsetWidth > 500) {
+        vizElement.style.width = "1600px";
+        vizElement.style.height = "2027px";
+      } else {
+        vizElement.style.width = "100%";
+        vizElement.style.height = "2077px";
+      }
+      var scriptElement = document.createElement("script");
+      scriptElement.src =
+        "https://public.tableau.com/javascripts/api/viz_v1.js";
+      vizElement.parentNode.insertBefore(scriptElement, vizElement);
+    </script>
+    <script src="https://public.tableau.com/javascripts/api/viz_v1.js"></script>
+  </body>
+</html>
